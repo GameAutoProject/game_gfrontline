@@ -15,7 +15,8 @@ def battle_into_formation_about_124e():
     point = wait(image_124e_map, timeout=30)
     if point:
         battle_into_formation((point[0]-125, point[1]+347))
-
+    
+    return (point[0]-125, point[1]+347)
 
 def battle_into_formation(point: tuple):
     touch(point)

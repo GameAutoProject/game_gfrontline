@@ -3,6 +3,7 @@
 from battle_link_action import *
 from page_switch_action import *
 from swap_dolls import init_swap_124e, swap_124e
+from repair_doll import doll_repair
 
 
 def model_circle_battle(times: int, stage_name: str):
@@ -11,6 +12,10 @@ def model_circle_battle(times: int, stage_name: str):
     stage_name:关卡名 格式"12-4-e"
     wait_name:等待时长
     """
+
+    # 维修周期，可设计进参数
+    repair_circle=12
+
     # 等待时间字典
     stage_message_dict = {
         "12-4-e": {
@@ -32,54 +37,57 @@ def model_circle_battle(times: int, stage_name: str):
     # 人形循环
     circle_doll_key = 0
     # 循环轮数
-    index = 1
+    index = 0
 
     # 脚本
-    while times > 0:
+    # 编码内index+1表示作战次数
+    while index < times:
         # 战役选择界面切入战役界面
         combat_into_battle(stage_name)
 
         # 部分地图需要做位移初始化,使用swag()
-        if index == 1:
+        if index == 0:
             pass
         
-        battle_into_script()
+        p1 = battle_into_script()
 
         # 初始换人优化,自动感知首发换人
-        if index == 1:
+        if index == 0:
             circle_doll_key = init_swap_124e()
             #   test
             # print(circle_doll_key)
             # 空值处理
             if circle_doll_key is None:
-                print("首发自动感知换人出现问题")
+                log("首发自动感知换人出现问题")
                 return
-
+        
         # 编队人形位置坐标之后用字典来顶替
         swap_script(circle_doll_key, (1200, 300))  
 
         touch((60, 60))  # 返回键,坐标先代替
         sleep(4)
 
-        print("     THIS IS TURN {0} BATTLE ABOUT {1}    ".format(index,stage_name))
+        # 前排维修
+        if (index+1)% (repair_circle + 1) == 0:
+            touch(p1)
+            # 第四位 300 + 230 * (4 - 1)
+            doll_repair((990,300))
+
+        log("     THIS IS TURN {0} BATTLE ABOUT {1}    ".format(index+1,stage_name))
 
         stage_12_4_e_script()
         
         #   等待刷本一轮结束
         sleep(stage_message_dict.get(stage_name)["time_interval"])
         #   结算点击
-        touch((1250, 30))
-        sleep(2)
-        touch((1250, 30))
-        sleep(2)
-        touch((1250, 30))
-        sleep(2)
-        touch((1250, 30))
-        sleep(2)
-        touch((1250, 30))
-        sleep(2)
+        i = 0
+        while i < 5 :
+            touch((1250, 30))
+            sleep(2)
+            i += 1
+        
         #   内部变量变化
         circle_doll_key += 1
-        times -= 1
         index += 1
         sleep(5)
+

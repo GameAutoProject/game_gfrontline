@@ -86,3 +86,6 @@ image_dolls = {
     }
 }
 """人形池"""
+
+# general image
+image_general_certain = Template(image_url+"/general/image_general_certain.png")

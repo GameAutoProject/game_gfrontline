@@ -17,7 +17,7 @@ def swap_124e(doll_key: int, change_point: tuple):
     doll_key = doll_key % len(dolls_list)
 
     if doll_key is None:
-        print("    doll_key is None!!  ")
+        log("    doll_key is None!!  ")
         return
 
     # touch((1200,300))
