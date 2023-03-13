@@ -76,13 +76,15 @@ image_menu_off = Template(image_url+"/page/top_menu/menu_off.png")
 image_menu_return_base = Template(image_url+"/page/top_menu/return_base.png")
 
 
+doll_acc = 0.75
+
 image_dolls = {
     "hk416": {
-        Template(image_url+"/entity/doll/hk416/1.png"),
-        Template(image_url+"/entity/doll/hk416/2.png"),
+        Template(image_url+"/entity/doll/hk416/1.png",threshold=doll_acc),
+        Template(image_url+"/entity/doll/hk416/2.png",threshold=doll_acc),
     },
     "k11": {
-        Template(image_url+"/entity/doll/k11/1.png"),
+        Template(image_url+"/entity/doll/k11/1.png",threshold=doll_acc),
     }
 }
 """人形池"""

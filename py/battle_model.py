@@ -14,12 +14,12 @@ def model_circle_battle(times: int, stage_name: str):
     """
 
     # 维修周期，可设计进参数
-    repair_circle=12
+    repair_circle=11
 
     # 等待时间字典
     stage_message_dict = {
         "12-4-e": {
-            "time_interval": 40 + 3 * 60,
+            "time_interval": 10 + 3 * 60,
         },
     }
     
@@ -70,8 +70,11 @@ def model_circle_battle(times: int, stage_name: str):
         # 前排维修
         if (index+1)% (repair_circle + 1) == 0:
             touch(p1)
+            sleep(2)
             # 第四位 300 + 230 * (4 - 1)
             doll_repair((990,300))
+            # 暂且先做此类操作，后续将部署与作战逻辑分开编写
+            touch((1200, 780))  # 取消键,坐标先代替
 
         log("     THIS IS TURN {0} BATTLE ABOUT {1}    ".format(index+1,stage_name))
 

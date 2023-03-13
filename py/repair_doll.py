@@ -8,6 +8,7 @@ def doll_repair(doll_point:tuple):
     输出需要维护人形的梯队位置坐标
     """
     log(doll_point)
-    touch((990,300))
+    # touch((990,300))
+    touch(doll_point)
     sleep(1)
     touch(image_general_certain)
