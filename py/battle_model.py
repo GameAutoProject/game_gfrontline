@@ -76,7 +76,7 @@ def model_circle_battle(times: int, stage_name: str):
             # 暂且先做此类操作，后续将部署与作战逻辑分开编写
             touch((1200, 780))  # 取消键,坐标先代替
 
-        log("     THIS IS TURN {0} BATTLE ABOUT {1}    ".format(index+1,stage_name))
+        log("***THIS IS TURN {0} BATTLE ABOUT {1}***".format(index+1,stage_name))
 
         stage_12_4_e_script()
         
@@ -89,6 +89,8 @@ def model_circle_battle(times: int, stage_name: str):
             sleep(2)
             i += 1
         
+        log("***TURN {0} BATTLE ABOUT {1} END!***".format(index+1,stage_name))
+
         #   内部变量变化
         circle_doll_key += 1
         index += 1

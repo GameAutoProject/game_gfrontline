@@ -36,7 +36,8 @@ def stage_12_4_e_script():
         sleep(time_sleep)
         #   补给
         touch(point_put_2)
-        touch(wait(image_supply_btn, timeout=30, intervalfunc=touch(point_put_2)))
+        supply_btn = wait(image_supply_btn, timeout=120, intervalfunc=touch(point_put_2))
+        touch(supply_btn)
         sleep(time_sleep)
         #   计划作战
         touch(point_put_1)
