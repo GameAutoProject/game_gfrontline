@@ -30,7 +30,7 @@ def stage_12_4_e_script():
         point_b = (X+244, Y+1)
         #   放人
         _lay_army(point_put_1, image_echelon_1)
-        _lay_army(point_put_2, image_echelon_1)
+        _lay_army(point_put_2, image_echelon_2)
         #   开始
         touch(image_start_battle_btn)
         sleep(time_sleep)

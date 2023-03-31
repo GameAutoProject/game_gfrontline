@@ -4,6 +4,8 @@ from airtest.core.api import *
 
 from image_source import *
 
+from event_watcher import *
+
 
 sleep_time = 5
 
@@ -38,7 +40,7 @@ def combat_into_battle(choose_stage: str):
         难度说明:   n:普通   e:困难   m:夜间
     """
     #   检查当前是否为战役选择界面
-    wait(image_combat_mission, timeout=30, interval=1, intervalfunc=any_into_combat)
+    wait(image_combat_mission, timeout=120, interval=1, intervalfunc=any_into_combat)
     #   战役选择界面
     touch(image_combat_mission)
     sleep(2)
@@ -49,6 +51,10 @@ def combat_into_battle(choose_stage: str):
     _choose_stage(stage)
     #   进入地图
     touch(image_start_special_btn)
+    #   满仓处理
+    if exists(image_event_bed_full):
+        bed_full_clear()
+        combat_into_battle(choose_stage)
     sleep(sleep_time)
 
 

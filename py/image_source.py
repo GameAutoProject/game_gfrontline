@@ -48,12 +48,15 @@ image_plan_off_btn = Template(
 image_execute_plan = Template(
     image_url+"/page/diagram/general/execute_plan.png")
 
-image_echelon_1 = Template(
-    image_url+"/page/diagram/army_select/echelon_choose.png", target_pos=2)
+image_echelon = Template(
+    image_url+"/page/diagram/army_select/echelon_choose.png", threshold=0.8, target_pos=2)
 
-image_certain = Template(image_url+"/page/diagram/army_select/certain.png")
+image_echelon_1 = Template(image_url+"/page/diagram/army_select/echelon_choose_1.png", threshold=0.98, record_pos=(-0.89,0.51), resolution=(1600,900))
+image_echelon_2 = Template(image_url+"/page/diagram/army_select/echelon_choose_2.png", threshold=0.98, record_pos=(-0.89,0.51), resolution=(1600,900))
 
-image_formation_btn = Template(image_url+"/page/diagram/army_select/formation_btn.png")
+image_certain = Template(image_url+"/page/diagram/army_select/certain.png", record_pos=(0.812,0.778), resolution=(1600,900))
+
+image_formation_btn = Template(image_url+"/page/diagram/army_select/formation_btn.png", record_pos=(-0.6,0.75), resolution=(1600,900))
 
 
 image_124e_map = Template(image_url+"/battle_map/12-4-e_map.png", rgb=True)
@@ -68,7 +71,7 @@ image_start_battle_btn = Template(
 
 
 # event
-image_event_bed_full = Template(image_url+"/event/bed_full.png")
+image_event_bed_full = Template(image_url+"/event/bed_full.png", target_pos=5)
 
 # top menu
 image_menu_on = Template(image_url+"/page/top_menu/menu_on.png", rgb=True)
@@ -91,3 +94,8 @@ image_dolls = {
 
 # general image
 image_general_certain = Template(image_url+"/general/image_general_certain.png")
+
+# factory
+image_factory_doll_return = Template(image_url+"/page/factory/doll_return.png")
+
+image_factory_certain = Template(image_url+"/page/factory/btn/factory_certain.png")

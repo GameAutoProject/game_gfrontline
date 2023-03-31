@@ -14,7 +14,7 @@ def model_circle_battle(times: int, stage_name: str):
     """
 
     # 维修周期，可设计进参数
-    repair_circle=11
+    repair_circle=10
 
     # 等待时间字典
     stage_message_dict = {
@@ -33,6 +33,7 @@ def model_circle_battle(times: int, stage_name: str):
         battle_into_script = battle_into_formation_about_124e
         swap_script = swap_124e
 
+    stage_script = stage_12_4_e_script
 
     # 人形循环
     circle_doll_key = 0
@@ -78,14 +79,17 @@ def model_circle_battle(times: int, stage_name: str):
 
         log("***THIS IS TURN {0} BATTLE ABOUT {1}***".format(index+1,stage_name))
 
-        stage_12_4_e_script()
+        stage_script()
         
         #   等待刷本一轮结束
         sleep(stage_message_dict.get(stage_name)["time_interval"])
+        
+        # wait()
+
         #   结算点击
         i = 0
         while i < 5 :
-            touch((1250, 30))
+            touch((1250, 50))
             sleep(2)
             i += 1
         
