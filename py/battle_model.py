@@ -63,6 +63,7 @@ def model_circle_battle(times: int, stage_name: str):
                 return
         
         # 编队人形位置坐标之后用字典来顶替
+        sleep(1) # 休眠1秒，防止未点击
         swap_script(circle_doll_key, (1200, 300))  
 
         touch((60, 60))  # 返回键,坐标先代替

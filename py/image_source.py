@@ -30,7 +30,7 @@ image_difficulty_e = Template(image_url+"/page/combat/difficulty/difficulty_emer
 
 # combat menu
 image_combat_mission = Template(
-    image_url+"/page/combat/menu/combat_mission.png", threshold=0.7)
+    image_url+"/page/combat/menu/combat_mission.png", threshold=0.8, record_pos=(-0.844,-0.578), resolution=(1600, 900))
 image_combat_campaign = Template(
     image_url+"/page/combat/menu/combat_campaign.png")
 image_combat_simulation = Template(
@@ -51,8 +51,9 @@ image_execute_plan = Template(
 image_echelon = Template(
     image_url+"/page/diagram/army_select/echelon_choose.png", threshold=0.8, target_pos=2)
 
-image_echelon_1 = Template(image_url+"/page/diagram/army_select/echelon_choose_1.png", threshold=0.98, record_pos=(-0.89,0.51), resolution=(1600,900))
-image_echelon_2 = Template(image_url+"/page/diagram/army_select/echelon_choose_2.png", threshold=0.98, record_pos=(-0.89,0.51), resolution=(1600,900))
+echelon_threshold = 0.98
+image_echelon_1 = Template(image_url+"/page/diagram/army_select/echelon_choose_1.png", threshold=echelon_threshold, record_pos=(-0.89,0.51), resolution=(1600,900))
+image_echelon_2 = Template(image_url+"/page/diagram/army_select/echelon_choose_2.png", threshold=echelon_threshold, record_pos=(-0.89,0.51), resolution=(1600,900))
 
 image_certain = Template(image_url+"/page/diagram/army_select/certain.png", record_pos=(0.812,0.778), resolution=(1600,900))
 
