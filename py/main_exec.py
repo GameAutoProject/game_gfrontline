@@ -19,7 +19,7 @@ print("start...")
 
 back_base()
 
-battel_time = 30 #10
+battel_time = 100 #10
 battel_stage = "12-4-e"
 
 model_circle_battle(battel_time,battel_stage)

@@ -2,7 +2,7 @@ from airtest.core.api import Template
 
 # source
 # image url
-image_url = r"./image"
+image_url = r"../image"
 
 # main button
 image_battle_btn = Template(image_url+"/page/home/battle_action.png",
@@ -51,7 +51,7 @@ image_execute_plan = Template(
 image_echelon = Template(
     image_url+"/page/diagram/army_select/echelon_choose.png", threshold=0.8, target_pos=2)
 
-echelon_threshold = 0.98
+echelon_threshold = 0.99
 image_echelon_1 = Template(image_url+"/page/diagram/army_select/echelon_choose_1.png", threshold=echelon_threshold, record_pos=(-0.89,0.51), resolution=(1600,900))
 image_echelon_2 = Template(image_url+"/page/diagram/army_select/echelon_choose_2.png", threshold=echelon_threshold, record_pos=(-0.89,0.51), resolution=(1600,900))
 

@@ -1,3 +1,4 @@
+# 游戏机制修改，该模块开发作废
 from image_source import *
 from airtest.core.api import *
 
@@ -13,3 +14,4 @@ def doll_repair(doll_point:tuple):
     sleep(1)
     # wait(image_general_certain, timeout=120)
     touch((1200,680))
+    log("repair doll about:"+str(doll_point))

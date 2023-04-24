@@ -3,7 +3,6 @@
 from battle_link_action import *
 from page_switch_action import *
 from swap_dolls import init_swap_124e, swap_124e
-from repair_doll import doll_repair
 
 
 def model_circle_battle(times: int, stage_name: str):
@@ -13,8 +12,8 @@ def model_circle_battle(times: int, stage_name: str):
     wait_name:等待时长
     """
 
-    # 维修周期，可设计进参数
-    repair_circle=10
+    # # 维修周期，可设计进参数  (模块作废，后续删除)
+    # repair_circle=8
 
     # 等待时间字典
     stage_message_dict = {
@@ -49,7 +48,8 @@ def model_circle_battle(times: int, stage_name: str):
         # 部分地图需要做位移初始化,使用swag()
         if index == 0:
             pass
-        
+
+        # 战旗界面转移至编队界面
         p1 = battle_into_script()
 
         # 初始换人优化,自动感知首发换人
@@ -66,17 +66,19 @@ def model_circle_battle(times: int, stage_name: str):
         sleep(1) # 休眠1秒，防止未点击
         swap_script(circle_doll_key, (1200, 300))  
 
+        # 编队界面退出
+        sleep(1)
         touch((60, 60))  # 返回键,坐标先代替
         sleep(4)
 
-        # 前排维修
-        if (index+1)% (repair_circle + 1) == 0:
-            touch(p1)
-            sleep(2)
-            # 第四位 300 + 230 * (4 - 1)
-            doll_repair((990,300))
-            # 暂且先做此类操作，后续将部署与作战逻辑分开编写
-            touch((1200, 780))  # 取消键,坐标先代替
+        # # 前排维修 (游戏机制修改，该模块作废)
+        # if ((index+1) % (repair_circle+1)) == 0:
+        #     touch(p1)
+        #     sleep(2)
+        #     # 第四位 300 + 230 * (4 - 1)
+        #     doll_repair((990,300))
+        #     # 暂且先做此类操作，后续将部署与作战逻辑分开编写
+        #     touch((1200, 780))  # 取消键,坐标先代替
 
         log("***THIS IS TURN {0} BATTLE ABOUT {1}***".format(index+1,stage_name))
 
