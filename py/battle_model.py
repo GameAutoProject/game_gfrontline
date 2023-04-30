@@ -31,8 +31,7 @@ def model_circle_battle(times: int, stage_name: str):
     if stage_name == "12-4-e":
         battle_into_script = battle_into_formation_about_124e
         swap_script = swap_124e
-
-    stage_script = stage_12_4_e_script
+        stage_script = stage_12_4_e_script
 
     # 人形循环
     circle_doll_key = 0
@@ -47,7 +46,10 @@ def model_circle_battle(times: int, stage_name: str):
 
         # 部分地图需要做位移初始化,使用swag()
         if index == 0:
-            pass
+            if not exists(image_124e_map):
+                # dY = -469.5
+                # swipe((),())
+                pass
 
         # 战旗界面转移至编队界面
         p1 = battle_into_script()
@@ -90,11 +92,12 @@ def model_circle_battle(times: int, stage_name: str):
         # wait()
 
         #   结算点击
-        i = 0
-        while i < 5 :
-            touch((1250, 50))
-            sleep(2)
-            i += 1
+        if wait(image_battle_result_great, timeout=120, intervalfunc=log('结算失败')):
+            i = 0
+            while i < 5 :
+                touch((1250, 50))
+                sleep(1)
+                i += 1
         
         log("***TURN {0} BATTLE ABOUT {1} END!***".format(index+1,stage_name))
 

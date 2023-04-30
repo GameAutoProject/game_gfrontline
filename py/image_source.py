@@ -100,3 +100,6 @@ image_general_certain = Template(image_url+"/general/image_general_certain.png")
 image_factory_doll_return = Template(image_url+"/page/factory/doll_return.png")
 
 image_factory_certain = Template(image_url+"/page/factory/btn/factory_certain.png")
+
+# battle result
+image_battle_result_great = Template(image_url+'/event/battle_result/battle_result_great.png')
