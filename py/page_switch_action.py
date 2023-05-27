@@ -7,7 +7,7 @@ from image_source import *
 from event_watcher import *
 
 
-sleep_time = 5
+sleep_time = 4
 
 
 def battle_into_formation_about_124e():
@@ -26,7 +26,7 @@ def battle_into_formation(point: tuple):
     #  判断是否为重装机场  重装/普通编队   选择普通编队
     choose_norm = exists(image_army_choose_norm)
     if choose_norm:
-        touch(choose_norm)
+        touch((choose_norm[0]+20, choose_norm[1]))
         
     sleep(sleep_time)
     #   选择"队伍编队"
@@ -94,6 +94,8 @@ def any_into_combat():
     """
     back_base()
     sleep(sleep_time)
+    # 检测是否有后勤回归
+    supportDispath()
     base_into_combat()
 
 

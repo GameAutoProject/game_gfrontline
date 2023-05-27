@@ -18,7 +18,7 @@ def model_circle_battle(times: int, stage_name: str):
     # 等待时间字典
     stage_message_dict = {
         "12-4-e": {
-            "time_interval": 10 + 3 * 60,
+            "time_interval": 50 + 2 * 60,
         },
     }
     
@@ -47,8 +47,7 @@ def model_circle_battle(times: int, stage_name: str):
         # 部分地图需要做位移初始化,使用swag()
         if index == 0:
             if not exists(image_124e_map):
-                # dY = -469.5
-                # swipe((),())
+                swipe((800,450), vector=(0,-0.6))
                 pass
 
         # 战旗界面转移至编队界面

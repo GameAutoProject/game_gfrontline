@@ -46,9 +46,6 @@ def init_swap_124e() -> int:
 
     return None
 
-
-
-
 def point_step_processor(point_list: list):
     """
         延时连点
@@ -56,7 +53,6 @@ def point_step_processor(point_list: list):
     for point in point_list:
         touch(point)
         sleep(1)
-
 
 def _dolls_filter(rate: list, specie: list, max):
     """
@@ -101,7 +97,6 @@ def _dolls_filter(rate: list, specie: list, max):
     list.append(ok_btn)
 
     return list
-
 
 def _dolls_search(doll_pic:dict):
     for doll in doll_pic:

@@ -27,8 +27,6 @@ def doll_choose_low():
     touch((1480,820))
     sleep(1)
 
-
-
 def doll_choose_high():
     """高星清除(暂且清理3.4.5星)"""
     touch((370,270))
@@ -46,6 +44,10 @@ def doll_choose_high():
     touch((1480,820))
     sleep(1)
     
-
-    
-    
+def supportDispath():
+    point = exists(image_support_again_btn)
+    if point:
+        touch(point)
+        sleep(1)
+        touch(image_general_certain)
+        sleep(2)

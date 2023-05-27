@@ -37,7 +37,7 @@ image_combat_simulation = Template(
     image_url+"/page/combat/menu/combat_simulation.png")
 
 
-image_army_choose_norm = Template(image_url+"/page/diagram/army_select/army_choose.png", target_pos=6)
+image_army_choose_norm = Template(image_url+"/page/diagram/army_select/army_choose.png", target_pos=4)
 
 image_start_special_btn = Template(
     image_url+"/page/combat/battle_setting/start_special.png")
@@ -103,3 +103,6 @@ image_factory_certain = Template(image_url+"/page/factory/btn/factory_certain.pn
 
 # battle result
 image_battle_result_great = Template(image_url+'/event/battle_result/battle_result_great.png')
+
+# support
+image_support_again_btn = Template(image_url+'/event/support_result/support_again_btn.png')
